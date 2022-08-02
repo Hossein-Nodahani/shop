@@ -21,6 +21,7 @@ const Card = ({data}) => {
 
 
                 {numberInCart !==0  &&   <h4> number : {numberInCart} </h4>}
+                {numberInCart !==0  &&   <h4> total price : {(numberInCart*data.price).toFixed(2)} </h4>}
 
                 <img src={data.image} alt="product" width={100} />
 

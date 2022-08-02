@@ -1,7 +1,7 @@
 import React , { useContext , useState } from 'react';
 import Card from './Card';
 
-import styles from '../styles/cards.module.css'
+import styles from '../styles/products.module.css'
 
 
 import { ProductsContext } from '../contexts/ProductsContextProvider' ;
