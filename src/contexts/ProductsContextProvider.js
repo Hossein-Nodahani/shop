@@ -1,10 +1,13 @@
 import React, { useEffect, useState } from 'react';
 
+// functions
 import { getProducts } from '../services/getProducts';
 
-export const  Products = React.createContext();
 
-const ProductsContext = (props) => {
+export const ProductsContext = React.createContext();
+
+
+const ProductsContextProvider = ({children}) => {
 
     const [ productsData , setProductsData ] = useState( [] );
     
@@ -15,11 +18,13 @@ const ProductsContext = (props) => {
             fetchAPI();
     }, [])
 
+
     return (
-        <Products.Provider value={productsData}>
-                {props.children}
-        </Products.Provider>
+        <ProductsContext.Provider value={productsData}>
+                {children}
+        </ProductsContext.Provider>
     );
+    
 };
 
-export default ProductsContext;
+export default ProductsContextProvider;

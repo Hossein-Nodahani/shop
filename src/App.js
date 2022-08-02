@@ -1,14 +1,26 @@
+import { BrowserRouter, Routes ,Route, Navigate } from 'react-router-dom';
 
-// API
-import ProductsContext from './components/ProductsContext';
+import Products from './components/Products';
+import Details from './components/Details';
+
+// contexts
+import ProductsContextProvider from './contexts/ProductsContextProvider';
+import CartContextProvider from './contexts/CartContextProvider';
+
 
 function App() {
   return (
-    <div>
-        <ProductsContext>
-            
-        </ProductsContext>
-    </div>
+    <BrowserRouter>
+      <ProductsContextProvider>
+         <CartContextProvider>
+                      <Routes>
+                              <Route path="/products"  element={<Products/>} />
+                              <Route path="/products/:id"  element={<Details />} />
+                              <Route path="/*" element={<Navigate to="/products"/>} />
+                      </Routes>
+          </CartContextProvider>
+        </ProductsContextProvider>
+    </BrowserRouter>
   );
 }
 
