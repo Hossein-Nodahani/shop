@@ -5,6 +5,9 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: rgb(195, 255, 235);
+  background: linear-gradient(0deg,#f7bfad 0,#c6caff 50% , #c1fcb2 100%);
+  min-height: 200vh;
 }
 
 code {
@@ -20,6 +23,7 @@ code {
 
 a {
   text-decoration: none;
+  color: #181818;
 }
 
 li {

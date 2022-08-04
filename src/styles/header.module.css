@@ -1,0 +1,74 @@
+
+header , ul , .icons , span {
+    display: flex;
+    align-items: center;
+}
+
+header{
+    position: sticky;
+    top: 0;
+    z-index: 500;
+    background-color: #fcdc00;
+    height: 5rem;
+    width: 100%;
+    box-shadow: 0px 9px 24px -3px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 0px 9px 24px -3px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 9px 24px -3px rgba(0,0,0,0.75);
+    justify-content: space-around;
+}
+
+
+ul {
+    justify-content: space-evenly;
+    width: 80%;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #181818;
+}
+
+.icons {
+    justify-content: space-evenly;
+    width: 20%;
+}
+
+header img{
+    opacity: .7;
+    width: 2rem;
+    transition: transform .2s;
+}
+
+header img:hover{
+    opacity: 1;
+    transform: scale(1.2);
+}
+
+.shopIcon{
+    position: relative;
+    padding-right: .5rem;
+}
+
+#cartCounter{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    font-size: .6rem;
+    background: linear-gradient(145deg,#f05a28 0,#ec008c 100%);
+    color: #fff;
+    justify-content: center;
+    align-items: center;
+}
+
+
+@media screen and (max-width:632px)  {
+    ul {
+        width: 70%;
+    }
+    
+    .icons {
+        width: 30%;
+    }
+    
+} 
