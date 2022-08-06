@@ -32,7 +32,6 @@ const Card = ({data}) => {
         <div className={styles.card}>
 
                 <div className={styles.imageBox}>
-                        {numberInCart !==0  &&   <span className={styles.number}>{numberInCart}</span>}
                         <img src={data.image} alt="product" width={100} />
                 </div>
 
@@ -40,22 +39,27 @@ const Card = ({data}) => {
                 <div className={styles.informationBox}>
 
                         <h4>{shortName(data.title)} </h4>
-                        <h4> price : {data.price} $</h4>
+                        <p className={styles.description}>{data.description}</p>
+                        <div > <Link to={`${data.id}`} className={styles.seeDetails}>see more... </Link></div>
 
-                        <div className={styles.buttons}>
-                                {numberInCart == 0 ?  
-                                        <button onClick={()=> dispatch({type:"addToCart",payload: data})} id={styles.add}> <img src={addIcon} alt="add"/> </button>:
-                                        <button onClick={()=> dispatch({type:"increase",payload: data})}> <img src={plussIcon} alt="pluss"/>  </button>
-                                }
+                        <div  className={styles.buttons} >
+                                <div>
+                                        {numberInCart > 1  && <button onClick={()=> dispatch({type:"decrease",payload: data})} className={styles.minus}> <img src={minusIcon} alt="minus"/>  </button>}
 
-                                {numberInCart > 1  && <button onClick={()=> dispatch({type:"decrease",payload: data})}> <img src={minusIcon} alt="minus"/>  </button>}
+                                        {numberInCart == 1  && <button onClick={()=> dispatch({type:"removeFromCart",payload: data})} className={styles.trash}> <img src={trashIcon} alt="trash"/> </button> }
+                                        {numberInCart !==0  &&   <div className={styles.number}>{numberInCart}</div>}
+                                        {numberInCart == 0 ?  
+                                                <button onClick={()=> dispatch({type:"addToCart",payload: data})} className={styles.add}> <img src={addIcon} alt="add"/> </button>:
+                                                <button onClick={()=> dispatch({type:"increase",payload: data})} className={styles.plus}> <img src={plussIcon} alt="pluss"/>  </button>
+                                        }
 
-                                {numberInCart == 1  && <button onClick={()=> dispatch({type:"removeFromCart",payload: data})}> <img src={trashIcon} alt="trash"/> </button> }
+
+                                </div>
+
+                                <h4 className={styles.price}>{data.price} $</h4>
+
                         </div>
 
-                        <div>
-                                  <Link to={`${data.id}`}>see details </Link>
-                        </div>
                 </div>
 
         </div>

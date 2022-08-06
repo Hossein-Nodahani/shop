@@ -1,0 +1,141 @@
+.details{
+    position: relative;
+    padding: 2rem;
+    margin: 2rem;
+    display: flex;
+    gap: .5rem;
+    height: 30rem;
+    border: 2px solid #4A1C25;
+    border-radius: 24px;
+}
+
+
+.imageBox {
+   width: 50%;
+   height: 100%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+ }
+
+.imageBox img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.informationBox{
+   width: 50%;
+   height: 100%;
+   padding: 2rem;
+   background-color: #FDC25B;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+   box-shadow: inset 0px -8px 0px #EE9448;
+   border-radius: 24px;
+ }
+
+.buttons{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-top: .5rem;
+}
+   
+.buttons div:nth-child(1){
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   width: 40%;
+}
+
+
+.plus ,.minus , .trash, .add , .price{
+   
+   border: 2px solid #263F2A;
+   background: #71C638;
+   box-shadow: inset 0px 4px 0px #B5FF84, inset 0px -4px 0px #46881B;
+   padding: .3rem .75rem;
+   border-radius: 8px;
+   display: flex;
+   align-items:center;
+   justify-content: center;
+}
+
+
+.number {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   padding: 4px 16px;
+   width: 50%;
+   height: 2rem;
+   background: #94633A;
+   border-radius: 8px;
+   color: #fff;
+}
+
+.add{
+   height: 2.5rem;
+   width: 100%;
+}
+
+.plus ,.minus , .trash {
+   height: 2rem;
+   width: 2rem;
+}
+
+
+.details button img {
+   height: 80%;
+   transition: all .3s;
+}
+
+.price{
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   width: 45%;
+   height: 2.5rem;
+   background: #71C638;
+   border: 2px solid #263F2A;
+   box-shadow: inset 0px 4px 0px #B5FF84, inset 0px -4px 0px #46881B;
+   border-radius: 8px;
+   color: #fff;
+} 
+
+  
+@media screen and (max-width:768px)  {
+   /* .details{
+      flex-direction: column;
+      height: 60rem;
+  } */
+  .informationBox{
+   width: 60%;
+ }
+ .imageBox {
+   width: 40%;
+ }
+}
+
+@media screen and (max-width:576px)  {
+   .details{
+      flex-direction: column;
+      height: 40rem;
+      padding: .5rem 0 0 ;
+      margin: 1rem;
+  }
+  .informationBox ,.imageBox {
+      width: 100%;
+      padding: 1.5rem;
+   } 
+   .informationBox{
+      height: 60%;
+   }
+   .imageBox{
+      height: 40%;
+   }
+}

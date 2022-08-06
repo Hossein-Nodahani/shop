@@ -1,83 +1,138 @@
- .card {
-   position: relative;
-    width: 15rem;
-    height: 23rem;
-    margin: 2rem;
-    border: solid 1px #181818;
-    overflow: hidden;
-    border-radius: 10px;
-    box-shadow: darkgreen;
-    -webkit-box-shadow: 10px 10px 5px 1px rgba(0,0,0,0.18);
-    -moz-box-shadow: 10px 10px 5px 1px rgba(0,0,0,0.18);
- }
 
- .imageBox {
-    position: relative;
-    width: 100%;
-    height: 13rem;
-    background-color: #fff;
-    display: flex;
-    justify-content: center;
-    padding: 2rem 0;
-    overflow: hidden;
- }
-
- .imageBox img {
-   max-height: 100%;
- }
-
- .informationBox{
-   width: 100%;
-   height: 10rem;
-   padding: 1rem;
-   background-color: #fcdc00;
-   display: flex;
-   flex-direction: column;
-   justify-content: space-between;
- }
-
-.buttons{
-  height: 2rem;
+.card{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  width: 20rem;
+  height: 23rem;
+  background: #FDC25B;
+  border: 2px solid #4A1C25;
+  border-radius: 24px;
+  margin: 2rem;
   overflow: hidden;
 }
 
-
-.card button {
-    background: linear-gradient(145deg,#f05a28 0,#ec008c 100%);
-    height: 2rem;
-    width: 4rem;
-    padding: .3rem .75rem;
-    border-radius: .6rem;
-    border: solid 1px #080808;
-    transition: all .5s;
-    margin-right: 1rem;
+.imageBox {
+  position: relative;
+  width: 100%;
+  height: 13rem;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  padding: 2rem 0;
+  overflow: hidden;
+  border-radius: 24px;
 }
 
- .card button img {
-  height: 100%;
+
+.informationBox{
+  width: 100%;
+  height: 10rem;
+  padding: 0 1rem 1rem;
+  background-color: #FDC25B;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: inset 0px -8px 0px #EE9448;
+  border-radius: 24px;
+}
+
+.description{
+  position: relative;
+  line-height: 20px;
+  height: 40px;
+  overflow: hidden;
+  font-size: .8rem;
+}
+
+.description::after{
+  content: "";
+  position: absolute;
+  height: 20px;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  background:linear-gradient(90deg ,transparent , #FDC25B 80% ) ;
+}
+
+.seeDetails{
+  color: #3C415C;
   transition: all .3s;
 }
 
-.card button:hover img{
-  transform: scale(1.25);
-}
-
-#add{
-  width: 8rem;
-}
-
-.number{
-  position: absolute;
-  bottom: 0;
-  background: linear-gradient(145deg,#f05a28 0,#ec008c 100%);
-  width: 100%;
-  height: 1.5rem;
-  border-radius: 0;
-  transition: all .5s ;
-  justify-content: center;
-  align-items: center;
-  border-radius: 8px 8px 0 0;
+.seeDetails:hover{
   color: #fff;
 }
 
+.buttons{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-top: .5rem;
+}
 
+.buttons div:nth-child(1){
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 60%;
+}
+
+
+.plus ,.minus , .trash, .add , .price{
+
+  border: 2px solid #263F2A;
+  background: #71C638;
+  box-shadow: inset 0px 4px 0px #B5FF84, inset 0px -4px 0px #46881B;
+  padding: .3rem .75rem;
+  border-radius: 8px;
+  display: flex;
+  align-items:center;
+  justify-content: center;
+}
+
+
+.number {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 4px 16px;
+  width: 50%;
+  height: 2rem;
+  background: #94633A;
+  border-radius: 8px;
+  color: #fff;
+}
+
+.add{
+  height: 2.5rem;
+  width: 100%;
+}
+
+.plus ,.minus , .trash {
+  height: 2rem;
+  width: 2rem;
+}
+
+
+.card button img {
+  height: 80%;
+  transition: all .3s;
+}
+
+.price{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 35%;
+  height: 2.5rem;
+  background: #71C638;
+  border: 2px solid #263F2A;
+  box-shadow: inset 0px 4px 0px #B5FF84, inset 0px -4px 0px #46881B;
+  border-radius: 8px;
+  color: #fff;
+}
