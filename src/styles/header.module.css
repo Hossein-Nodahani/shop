@@ -18,12 +18,24 @@ header{
 }
 
 
-ul {
+header ul {
     justify-content: space-evenly;
     width: 80%;
     font-size: 1.5rem;
     font-weight: bold;
     color: #181818;
+}
+
+header a {
+    color: #181818;
+}
+
+header ul li {
+    transition: all .2s;
+}
+
+header ul li:hover{
+    transform: scale(1.1);
 }
 
 .icons {
@@ -55,7 +67,7 @@ header img:hover{
     height: 1rem;
     border-radius: 50%;
     font-size: .6rem;
-    background: linear-gradient(145deg,#f05a28 0,#ec008c 100%);
+    background: #71C638;
     color: #fff;
     justify-content: center;
     align-items: center;

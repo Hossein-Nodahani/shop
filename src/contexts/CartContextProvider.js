@@ -1,4 +1,6 @@
 import React, { useReducer } from 'react';
+import { notify } from '../services/notify';
+
 
 export const CartContext = React.createContext();
 
@@ -6,8 +8,8 @@ export const CartContext = React.createContext();
 const initialState = {
     selectedProducts : [] ,
     totalNumberOfProducts : 0,
-    totalPriceOfProducts : 0
-
+    totalPriceOfProducts : 0 ,
+    isCheckOut : false 
 }
 
 
@@ -15,7 +17,7 @@ const reducer = (state,{type , payload}) => {
 
     let thisProductInCart ;
 
-    if( type != "clearCart"){
+    if( type != "clearCart" && type != "checkOut"){
          thisProductInCart = state.selectedProducts.find(item => item.id == payload.id);
     }
 
@@ -53,8 +55,29 @@ const reducer = (state,{type , payload}) => {
                 return state ; 
 
         case "clearCart":
-                state = {...state , selectedProducts : [] , totalNumberOfProducts : 0, totalPriceOfProducts : 0};
-                return state ;               
+            if(state.selectedProducts.length != 0){
+                state = { selectedProducts : [] ,
+                    totalNumberOfProducts : 0,
+                    totalPriceOfProducts : 0 ,
+                    isCheckOut : false}   ;
+                notify("The shopping cart has been successfully emptied" , "success");          
+            }else{
+                notify("There is nothing in the shopping cart" , "error");          
+            }
+            return state ;   
+                
+        case "checkOut":
+            if(state.selectedProducts.length != 0){
+                state = { selectedProducts : [] ,
+                        totalNumberOfProducts : 0,
+                        totalPriceOfProducts : 0 ,
+                        isCheckOut : true };
+                notify("Checkout was done successfully" , "success");          
+            }else{
+                notify("There is nothing in the shopping cart" , "error");          
+            }
+
+            return state ; 
     }
 
 }

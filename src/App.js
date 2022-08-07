@@ -1,5 +1,6 @@
 import { BrowserRouter, Routes ,Route, Navigate } from 'react-router-dom';
-
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 // components
 import Header from './components/Header';
@@ -26,6 +27,7 @@ function App() {
                       </Routes>
           </CartContextProvider>
         </ProductsContextProvider>
+        <ToastContainer />
     </BrowserRouter>
   );
 }
